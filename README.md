@@ -1,16 +1,14 @@
-# Docker network
+# Docker Compose
 
-`network`是一个比较艰深的概念，能做到事情也有很多，这里我们利用它来实现容器之间的通信，首先看下`network`的基本操作：
+可以使用Docker Compose管理、连接多个容器，只需要增加一个`docker-compose.yml`的配置文件。例如一个Node应用容器搭配一个数据库容器开发时，如果使用命令行通过Network通信比较繁琐（下面的部分展示了），而使用Docker Compose就能够方便地管理多个容器，还能够配置它们之间的关联关系，一切只需要在配置文件中配置完成后执行：
 
 ```bash
-# 查看有哪些网络
-$ docker network ls
-
-# 创建的桥接网络，能够使容器之间可以通信
-$ docker network create --driver=bridge my-app-net
+$ docker-compose up
 ```
 
-> 一般来说不要使用docker预支的桥接网络，自己创建一个。
+-----
+
+# 不使用Docker Compose
 
 ## 启动mongo镜像，作为数据库端
 

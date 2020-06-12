@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  docker-network-app:
+    image: docker-network-app
+    build: .
+    environment:
+      NODE_ENV: production
+      MONGO_DB_URL: mongodb://docker-network-db:27017
+    ports:
+      - 8085:8085
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    # need connect to other container named "docker-network-db", docker will start "docker-network-db" container before "docker-network-app"
+    links:
+      - db
+  db:
+    image: mongo:3

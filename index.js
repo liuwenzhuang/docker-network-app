@@ -19,7 +19,7 @@ const start = async () => {
   const collection = db.collection(collectionName)
 
   app.get('/', async (req, res) => {
-    const count = await collection.count()
+    const count = await collection.countDocuments()
     res.json({
       success: true,
       count,
