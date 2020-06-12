@@ -39,3 +39,9 @@ $ docker run --init --rm --network my-app-net -p 8085:8085 --env MONGO_DB_URL=mo
 
 - http://localhost:8085/add 插入数据
 - http://localhost:8085 查询数据
+
+## 使用Docker Compose简化过程
+
+```bash
+$ git checkout docker-compose
+```
