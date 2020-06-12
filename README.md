@@ -20,7 +20,7 @@ $ docker run -d --rm --name db --network my-app-net -p 27017:27017 mongo:3
 
 > 指定容器名称为 db，映射的端口为27017，其他容器连接的url为`mongodb://db:27017`
 
-### 启动mongo镜像作为客户端连接上述数据库端
+### 启动mongo镜像作为客户端连接上述数据库端（测试）
 
 ```bash
 $ docker run -it --rm --network my-app-net mongo:3 mongo --host db
